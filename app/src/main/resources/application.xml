@@ -9,10 +9,13 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context-4.0.xsd">
     
+    <context:annotation-config/>
     <context:property-placeholder location="classpath:application.properties"/>
     <!--<bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
         <property name="locations" value="application.properties"/>
     </bean>-->
+    
+    <!--<bean class = "org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
     <bean class="com.dmdev.spring.bfpp.LogBeanFactoryPostProcessor"/>
     <bean class="com.dmdev.spring.bfpp.VerifyPropertyBeanFactoryPostProcessor"/>
     
@@ -20,9 +23,7 @@
         <constructor-arg type="java.lang.String" value="${db.driver}"/>
     </bean>
     
-    <bean id = "pool1" name="p1,p2,p3" class="com.dmdev.spring.database.pool.ConnectionPool" 
-          init-method="init" 
-          destroy-method="destroy">
+    <bean id = "pool1" name="p1,p2,p3" class="com.dmdev.spring.database.pool.ConnectionPool">
         
         <constructor-arg name="username" type="String" value="${db.username}"/>
         <constructor-arg name="poolSize" type="Integer" value="${db.pool.size}"/>      
