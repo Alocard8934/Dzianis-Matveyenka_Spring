@@ -3,6 +3,7 @@ package com.dmdev.spring;
 
 import com.dmdev.spring.database.pool.ConnectionPool;
 import com.dmdev.spring.database.repository.CompanyRepository;
+import com.dmdev.spring.database.repository.CrudRepository;
 import com.dmdev.spring.database.repository.UserRepository;
 import com.dmdev.spring.ioc.Container;
 import com.dmdev.spring.service.UserService;
@@ -20,8 +21,11 @@ public class AppliactionRunner {
         try(var context = new ClassPathXmlApplicationContext("application.xml")){          
         var connectionPool = context.getBean("p1", ConnectionPool.class);
         System.out.println(connectionPool);
-        var companyRepository = context.getBean("companyRepository", CompanyRepository.class);
-        System.out.println(companyRepository);
+        /*var companyRepository = context.getBean("companyRepository", CompanyRepository.class);
+        System.out.println(companyRepository);*/
+        var companyRepository = context.getBean("companyRepository", CrudRepository.class);
+        System.out.println(companyRepository.findById(1));
+
               
         }
     }
