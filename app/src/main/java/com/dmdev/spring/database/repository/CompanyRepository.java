@@ -12,19 +12,25 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
 
+@Repository
 @Transaction
 @Auditing
 public class CompanyRepository implements CrudRepository<Integer, Company> {
 
-//@Resource(name = "pool1") 
-//@Qualifier("pool1")
-    private ConnectionPool pool1;
-    @Autowired
-    private List<ConnectionPool> pools;
-    
-    @Value("${db.pool.size}")
-    private Integer poolSize;
+    private final ConnectionPool pool1;
+    private final List<ConnectionPool> pools;
+
+    private final Integer poolSize;
+
+    public CompanyRepository(ConnectionPool pool1,
+            List<ConnectionPool> pools,
+            @Value("${db.pool.size}") Integer poolSize) {
+        this.pool1 = pool1;
+        this.pools = pools;
+        this.poolSize = poolSize;
+    }
 
     @PostConstruct
     private void init() {
@@ -40,11 +46,6 @@ public class CompanyRepository implements CrudRepository<Integer, Company> {
     @Override
     public void delete(Company entity) {
         System.out.println("delete method...");
-    }
-
-    @Autowired
-    public void setPool1(@Qualifier("pool1") ConnectionPool pool1) {
-        this.pool1 = pool1;
     }
 
 }
