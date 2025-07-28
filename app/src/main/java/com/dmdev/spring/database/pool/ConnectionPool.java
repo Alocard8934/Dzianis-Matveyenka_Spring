@@ -15,7 +15,10 @@ public class ConnectionPool {
     private final String username;
     private final Integer poolSize;
 
-    public ConnectionPool(@Value("${db.username") String username, @Value("${db.pool.size") Integer poolSize) {
+    public ConnectionPool(
+            @Value("${db.username}") String username,
+            @Value("${db.pool.size}") Integer poolSize // ✅ тут всё хорошо!
+    ) {
         this.username = username;
         this.poolSize = poolSize;
     }

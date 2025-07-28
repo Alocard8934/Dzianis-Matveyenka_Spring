@@ -21,6 +21,7 @@ dependencies {
 
     // https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api
     implementation("jakarta.annotation:jakarta.annotation-api:2.1.1")   
+    implementation ("javax.inject:javax.inject:1")
     // Use JUnit Jupiter for testing.
     testImplementation libs.junit.jupiter
 
