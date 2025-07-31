@@ -22,19 +22,18 @@ import org.springframework.stereotype.Repository;
 @Auditing
 public class CompanyRepository implements CrudRepository<Integer, Company> {
 
-    private final ConnectionPool pool1;
+    private final ConnectionPool pool;
     private final List<ConnectionPool> pools;
 
     private final Integer poolSize;
 
-    public CompanyRepository(ConnectionPool pool1,
-            List<ConnectionPool> pools,
-            @Value("${db.pool.size}") Integer poolSize) {
-        this.pool1 = pool1;
-        this.pools = pools;
-        this.poolSize = poolSize;
-    }
-
+    public CompanyRepository(@Qualifier("pool2") ConnectionPool pool,
+                         List<ConnectionPool> pools,
+                         @Value("${db.pool.size}") Integer poolSize) {
+    this.pool = pool;
+    this.pools = pools;
+    this.poolSize = poolSize;
+}
     @PostConstruct
     private void init() {
         System.out.println("init company repository");
