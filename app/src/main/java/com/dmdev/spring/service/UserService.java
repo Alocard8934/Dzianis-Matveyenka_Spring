@@ -6,6 +6,7 @@ import com.dmdev.spring.database.repository.CompanyRepository;
 import com.dmdev.spring.database.repository.CrudRepository;
 import com.dmdev.spring.database.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,10 +15,13 @@ public class UserService {
     private final CrudRepository<Integer, Company> companyRepository;
    
 
-    public UserService(UserRepository userRepository, CrudRepository<Integer, Company> companyRepository) {
-        this.userRepository = userRepository;
-        this.companyRepository = companyRepository;
-    }
+    public UserService(
+    @Qualifier("userRepository2") UserRepository userRepository,
+    CrudRepository<Integer, Company> companyRepository) {
+    this.userRepository = userRepository;
+    this.companyRepository = companyRepository;
+}
+
 
    
    
