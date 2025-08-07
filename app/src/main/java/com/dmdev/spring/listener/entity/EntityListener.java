@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class EntityListener {
     
-    @EventListener(condition= "#root.args[0].accespType.name()== 'READ'")
+    @EventListener(condition= "#root.args[0].accessType.name()== 'READ'")
     @Order(10)
     public void accepEntity(EntityEvent entityEvent){
         System.out.println("Entity: " + entityEvent);

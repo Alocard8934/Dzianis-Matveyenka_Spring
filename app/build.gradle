@@ -18,6 +18,8 @@ repositories {
 dependencies {
     implementation("org.springframework:spring-core:6.2.8")
     implementation("org.springframework:spring-context:6.2.8")
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation("org.postgresql:postgresql:42.7.7")
 
     // https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api
     implementation("jakarta.annotation:jakarta.annotation-api:2.1.1")   
