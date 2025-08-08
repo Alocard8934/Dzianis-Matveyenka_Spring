@@ -13,7 +13,7 @@ import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class AppliactionRunner {
+public class ApplicationRunner {
 
     public static void main(String[] args) {
         String value = "hello";
