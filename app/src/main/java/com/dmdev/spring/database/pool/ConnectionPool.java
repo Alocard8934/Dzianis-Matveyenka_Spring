@@ -13,7 +13,9 @@ import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Component("pool1")
 @ConfigurationProperties(prefix = "db")
 @Getter
@@ -52,12 +54,12 @@ public class ConnectionPool {
 
     @PostConstruct
     private void init() {
-        System.out.println("Init connection pool: " + this);
+        log.info("Init connection pool: " + this);
     }
 
     @PreDestroy
     private void destroy() {
-        System.out.println("Clean connection pool");
+        log.info("Clean connection pool");
     }
 
     @Override
