@@ -2,9 +2,6 @@ package com.dmdev.spring.database.pool;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -27,22 +24,22 @@ public class ConnectionPool {
         // no-arg constructor for Spring
     }
 
-    @NotBlank
+
     private String username;
 
-    @NotBlank
+
     private String password;
 
-    @Min(1)
+
     private Integer poolSize;
 
-    @NotBlank
+
     private String driver;
 
-    @NotBlank
+
     private String url;
 
-    @NotEmpty
+
     private List<String> hosts;
     
     // Конструктор с параметрами

@@ -1,0 +1,8 @@
+2025-08-14T21:37:09.263+02:00  INFO 8000 --- [main] c.d.spring.database.pool.ConnectionPool  : Init connection pool: ConnectionPool{username='postgres', password='***', poolSize=null, driver='org.postgresql.Driver', url='postgres:5432', hosts=[localhost, 127.0.0.1]}
+2025-08-14T21:37:09.296+02:00  INFO 8000 --- [main] c.d.spring.database.pool.ConnectionPool  : Init connection pool: ConnectionPool{username='postgres', password='***', poolSize=20, driver='org.postgresql.Driver', url='postgres:5432', hosts=[localhost, 127.0.0.1]}
+2025-08-14T21:37:09.310+02:00  INFO 8000 --- [main] c.d.spring.database.pool.ConnectionPool  : Init connection pool: ConnectionPool{username='postgres', password='***', poolSize=25, driver='org.postgresql.Driver', url='postgres:5432', hosts=[localhost, 127.0.0.1]}
+2025-08-14T21:37:09.318+02:00  WARN 8000 --- [main] c.d.s.d.repository.CompanyRepository     : init company repository
+2025-08-14T21:37:09.323+02:00  WARN 8000 --- [main] c.d.s.d.repository.CompanyRepository     : init company repository
+2025-08-14T21:37:09.423+02:00  INFO 8000 --- [SpringApplicationShutdownHook] c.d.spring.database.pool.ConnectionPool  : Clean connection pool
+2025-08-14T21:37:09.424+02:00  INFO 8000 --- [SpringApplicationShutdownHook] c.d.spring.database.pool.ConnectionPool  : Clean connection pool
+2025-08-14T21:37:09.424+02:00  INFO 8000 --- [SpringApplicationShutdownHook] c.d.spring.database.pool.ConnectionPool  : Clean connection pool
